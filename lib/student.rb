@@ -25,7 +25,7 @@ class Student
     end
   end
 
-  def self.all_students_below_12th_grade
+  def self.students_below_12th_grade
     sql = "SELECT * FROM students WHERE grade = '9' OR grade = '10' OR grade = '12'"
 
     DB[:conn].execute(sql).map do |row|
