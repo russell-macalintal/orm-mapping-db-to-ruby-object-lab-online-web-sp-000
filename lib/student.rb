@@ -26,7 +26,7 @@ class Student
   end
 
   def self.students_below_12th_grade
-    sql = "SELECT * FROM students WHERE grade = '9' OR grade = '10' OR grade = '12'"
+    sql = "SELECT * FROM students WHERE grade = '9' OR grade = '10' OR grade = '11'"
 
     DB[:conn].execute(sql).map do |row|
       Student.new_from_db(row)
