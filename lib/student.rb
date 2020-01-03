@@ -18,7 +18,9 @@ class Student
   end
 
   def self.all_students_in_grade_9
-    sql = "SELECT * FROM students WHERE grade = '9th'"
+    sql = <<-SQL
+      SELECT * FROM students WHERE grade = '9th'
+      SQL
 
     DB[:conn].execute(sql).map do |row|
       Student.new_from_db(row)
